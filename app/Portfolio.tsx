@@ -63,7 +63,7 @@ export default function ModernBWPortfolio() {
   const calculateYearCGPA = (sem1: number | null, sem2: number | null): string | null => {
     if (sem1 === null && sem2 === null) return null
     if (sem2 === null) return sem1?.toFixed(2) ?? null
-    return ((sem1 ?? 0 + sem2) / 2).toFixed(2)
+    return (((sem1 ? sem1 : 0 )+ sem2) / 2).toFixed(2)
   }
   const skills = [
     { name: 'C/C++', category: 'Languages' },
