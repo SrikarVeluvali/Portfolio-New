@@ -371,9 +371,9 @@ export default function ModernBWPortfolio() {
             <Card className="bg-gray-800 border-gray-700">
               <CardContent className="prose prose-invert">
                 <p className="mt-4 text-gray-300">
-                  Hey! I'm Srikar, currently pursuing a Bachelor of Technology in Information Technology at Keshav Memorial Institute of Technology with a CGPA of <b>9.75</b>. <br /><br />
-                  I've had the chance to work as a <b>CUDA Programming Intern at DRDL</b>, optimizing computational efficiency for complex simulations. I love diving into tech challenges, and I've built some cool projects like a medical chatbot and a heart health prediction app using AI and machine learning. <br /><br />
-                  When I'm not coding or tinkering with tech, I enjoy solving problems on Leetcode or exploring the latest in generative AI.
+                  Hey! I&apos;m Srikar, currently pursuing a Bachelor of Technology in Information Technology at Keshav Memorial Institute of Technology with a CGPA of <b>9.75</b>. <br /><br />
+                  I&apos;ve had the chance to work as a <b>CUDA Programming Intern at DRDL</b>, optimizing computational efficiency for complex simulations. I love diving into tech challenges, and I&apos;ve built some cool projects like a medical chatbot and a heart health prediction app using AI and machine learning. <br /><br />
+                  When I&apos;m not coding or tinkering with tech, I enjoy solving problems on Leetcode or exploring the latest in generative AI.
                 </p>
               </CardContent>
             </Card>
