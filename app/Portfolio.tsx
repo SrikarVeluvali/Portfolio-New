@@ -10,14 +10,24 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Github, Linkedin, Mail, FileText, Code, Youtube } from 'lucide-react'
 
+type SectionRefs = {
+  [key: string]: HTMLElement | null;
+}
+
+type CGPAData = {
+  year: number;
+  sem1: number | null;
+  sem2: number | null;
+}
+
 export default function ModernBWPortfolio() {
   const [activeSection, setActiveSection] = useState('home')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const sectionRefs = useRef({})
+  const sectionRefs = useRef<SectionRefs>({})
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'CGPA', 'skills', 'experience', 'projects', 'education', 'contact']
+      const sections = ['home', 'about', 'cgpa', 'skills', 'experience', 'projects', 'education', 'contact']
       const currentSection = sections.find(section => {
         const element = sectionRefs.current[section]
         if (element) {
@@ -35,24 +45,26 @@ export default function ModernBWPortfolio() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId) => {
-    sectionRefs.current[sectionId].scrollIntoView({ behavior: 'smooth' })
+  const scrollToSection = (sectionId: string) => {
+    const element = sectionRefs.current[sectionId]
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
     setIsMenuOpen(false)
   }
 
-  const cgpaData = [
+  const cgpaData: CGPAData[] = [
     { year: 1, sem1: 9.84, sem2: 9.79 },
     { year: 2, sem1: 9.62, sem2: null },
     { year: 3, sem1: null, sem2: null },
     { year: 4, sem1: null, sem2: null },
   ]
 
-  const calculateYearCGPA = (sem1, sem2) => {
+  const calculateYearCGPA = (sem1: number | null, sem2: number | null): string | null => {
     if (sem1 === null && sem2 === null) return null
-    if (sem2 === null) return sem1
-    return ((sem1 + sem2) / 2).toFixed(2)
+    if (sem2 === null) return sem1?.toFixed(2) ?? null
+    return ((sem1 ?? 0 + sem2) / 2).toFixed(2)
   }
-
   const skills = [
     { name: 'C/C++', category: 'Languages' },
     { name: 'Python', category: 'Languages' },
@@ -85,7 +97,7 @@ export default function ModernBWPortfolio() {
   ];
 
   const SkillCloud = () => {
-    const [hoveredSkill, setHoveredSkill] = useState(null)
+    const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
   
     return (
       <div className="flex flex-wrap justify-center gap-4">
@@ -144,7 +156,7 @@ export default function ModernBWPortfolio() {
     },
     {
       title: 'Dataset - Extraction, Analysis, and Visualization',
-      description: 'A Python-based data analysis project that explores the &quot;Video Game Sales Analysis&quot; dataset to answer 15 key questions related to video games. Presented at PRAKALP 2023.',
+      description: 'A Python-based data analysis project that explores the Video Game Sales Analysis dataset to answer 15 key questions related to video games. Presented at PRAKALP 2023.',
       technologies: ['Python', 'Data Analysis', 'Visualization','Tableau'],
       github: 'https://github.com/SrikarVeluvali/dataanalysis'
     },
@@ -177,7 +189,7 @@ export default function ModernBWPortfolio() {
     }
   ];
 
-  const calculateOverallCGPA = () => {
+  const calculateOverallCGPA = (): string => {
     let totalCGPA = 0
     let semesters = 0
     cgpaData.forEach(year => {
@@ -253,7 +265,7 @@ export default function ModernBWPortfolio() {
       </header>
 
       <main className="container mx-auto px-6 pt-20">
-        <section id="home" ref={el => sectionRefs.current['home'] = el} className="min-h-screen flex items-center justify-center">
+      <section id="home" ref={(el) => { sectionRefs.current['home'] = el }} className="min-h-screen flex items-center justify-center">
           <div className="text-center">
             <motion.div
               initial={{ scale: 0 }}
@@ -365,7 +377,7 @@ export default function ModernBWPortfolio() {
           </div>
         </section>
 
-        <section id="about" ref={el => sectionRefs.current['about'] = el} className="py-20">
+        <section id="about" ref={(el) => { sectionRefs.current['about'] = el }} className="py-20">
           <h2 className="text-4xl font-bold mb-8 text-center text-gray-100">About Me</h2>
           <div className="max-w-3xl mx-auto">
             <Card className="bg-gray-800 border-gray-700">
@@ -380,7 +392,7 @@ export default function ModernBWPortfolio() {
           </div>
         </section>
 
-        <section id="cgpa" ref={el => sectionRefs.current['cgpa'] = el} className="py-20">
+        <section id="cgpa" ref={el => {sectionRefs.current['cgpa'] = el}} className="py-20">
       <h2 className="text-4xl font-bold mb-8 text-center text-gray-100">Academic Performance</h2>
       <div className="max-w-4xl mx-auto">
         <Card className="bg-gray-800 border-gray-700">
@@ -420,7 +432,7 @@ export default function ModernBWPortfolio() {
       </div>
     </section>
 
-        <section id="skills" ref={el => sectionRefs.current['skills'] = el} className="py-20">
+        <section id="skills" ref={el => {sectionRefs.current['skills'] = el}} className="py-20">
           <h2 className="text-4xl font-bold mb-8 text-center text-gray-100">Skills & Expertise</h2>
           <Card className="bg-gray-800 border-gray-700 max-w-4xl mx-auto">
             <CardContent className="p-6">
@@ -429,7 +441,7 @@ export default function ModernBWPortfolio() {
           </Card>
         </section>
 
-        <section id="experience" ref={el => sectionRefs.current['experience'] = el} className="py-20">
+        <section id="experience" ref={el => {sectionRefs.current['experience'] = el}} className="py-20">
           <h2 className="text-4xl font-bold mb-8 text-center text-gray-100">Work Experience</h2>
           <div className="max-w-4xl mx-auto">
             {experiences.map((exp, index) => (
@@ -457,7 +469,7 @@ export default function ModernBWPortfolio() {
           </div>
         </section>
 
-        <section id="projects" ref={el => sectionRefs.current['projects'] = el} className="py-20">
+        <section id="projects" ref={el => {sectionRefs.current['projects'] = el}} className="py-20">
           <h2 className="text-4xl font-bold mb-8 text-center text-gray-100">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
@@ -493,7 +505,7 @@ export default function ModernBWPortfolio() {
           </div>
         </section>
 
-        <section id="education" ref={el => sectionRefs.current['education'] = el} className="py-20">
+        <section id="education" ref={el => {sectionRefs.current['education'] = el}} className="py-20">
           <h2 className="text-4xl font-bold mb-8 text-center text-gray-100">Education & Certifications</h2>
           <div className="max-w-4xl mx-auto">
             <Tabs defaultValue="education" className="w-full">
@@ -528,7 +540,7 @@ export default function ModernBWPortfolio() {
           </div>
         </section>
 
-        <section id="contact" ref={el => sectionRefs.current['contact'] = el} className="py-20">
+        <section id="contact" ref={el => {sectionRefs.current['contact'] = el}} className="py-20">
           <h2 className="text-4xl font-bold mb-8 text-center text-gray-100">Get in Touch</h2>
           <div className="flex justify-center">
             <Card className="w-full max-w-md bg-gray-800 border-gray-700">
