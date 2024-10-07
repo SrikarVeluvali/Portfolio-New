@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -9,7 +9,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Github, Linkedin, Mail, FileText, Code, Youtube } from 'lucide-react'
-import { Progress } from "@/components/ui/progress"
 
 export default function ModernBWPortfolio() {
   const [activeSection, setActiveSection] = useState('home')
@@ -90,7 +89,7 @@ export default function ModernBWPortfolio() {
   
     return (
       <div className="flex flex-wrap justify-center gap-4">
-        {skills.map((skill, index) => (
+        {skills.map((skill) => (
           <TooltipProvider key={skill.name}>
             <Tooltip>
               <TooltipTrigger>
@@ -133,7 +132,7 @@ export default function ModernBWPortfolio() {
     },
     {
       title: 'Heart Health Web Application',
-      description: 'Developed a MERN stack web app with Machine Learning for heart disease prediction, offering personalized diet and exercise plans and integrating Google\'s Gemini AI for diet suggestions.',
+      description: 'Developed a MERN stack web app with Machine Learning for heart disease prediction, offering personalized diet and exercise plans and integrating Google&apos;s Gemini AI for diet suggestions.',
       technologies: ['MERN', 'Machine Learning', 'Google Gemini AI', 'Flask'],
       github: 'https://github.com/SrikarVeluvali/HeartHealth'
     },
@@ -177,6 +176,7 @@ export default function ModernBWPortfolio() {
       ]
     }
   ];
+
   const calculateOverallCGPA = () => {
     let totalCGPA = 0
     let semesters = 0
@@ -192,6 +192,7 @@ export default function ModernBWPortfolio() {
     })
     return semesters > 0 ? (totalCGPA / semesters).toFixed(2) : 'N/A'
   }
+
   const education = [
     {
       degree: 'Bachelor of Technology in Information Technology',
@@ -218,7 +219,7 @@ export default function ModernBWPortfolio() {
     'Prompt Design and Developing Generative AI Apps - Google (Awarded May 2024)',
     'Top Performer in Coding Challenges - Leetcode (Solving over 600 problems)',
     '2-Star Rating on Codechef for Competitive Programming',
-    'Nominee for People\'s Choice Award - Google Gemini API Developer Competition (2024)'
+    'Nominee for People&apos;s Choice Award - Google Gemini API Developer Competition (2024)'
   ];
 
   return (
