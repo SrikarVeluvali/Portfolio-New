@@ -413,7 +413,7 @@ export default function ModernBWPortfolio() {
             <Card className="bg-gray-800 border-gray-700">
               <CardContent className="prose prose-invert">
                 <p className="mt-4 text-gray-300">
-                Hey! I&apos;m Srikar Veluvali, currently pursuing a Bachelor of Technology in Information Technology at Keshav Memorial Institute of Technology with a CGPA of <b>9.78</b>.<br /><br />
+                Hey! I&apos;m Srikar Veluvali, currently pursuing a Bachelor of Technology in Information Technology at Keshav Memorial Institute of Technology with a CGPA of <b>9.67</b>.<br /><br />
       I&apos;m currently a <b>Research Intern at Microsoft</b> in Bengaluru. Previously, I was an <b>HPC Software Engineering Intern at DRDL (DRDO)</b>.<br /><br />
       I&apos;ve built projects like <b>Astor AI</b>, a medical chatbot fine-tuned on Llama 3 with Retrieval-Augmented Generation achieving <b>400+ downloads</b>, and a <b>Heart Health Web App</b> using the MERN stack and machine learning with Google&apos;s Gemini AI for personalized plans, nominated for the <b>People&apos;s Choice Award in the Google Gemini API Developer Competition.</b><br /><br />
       When I&apos;m not coding or tinkering with tech, I enjoy solving problems on <b>Leetcode (&gt;800 problems, rating 1713)</b> or exploring the latest in generative AI.
