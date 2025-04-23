@@ -56,7 +56,7 @@ export default function ModernBWPortfolio() {
   const cgpaData: CGPAData[] = [
     { year: 1, sem1: 9.84, sem2: 9.79 },
     { year: 2, sem1: 9.62, sem2: 9.86 },
-    { year: 3, sem1: null, sem2: null },
+    { year: 3, sem1: 9.26, sem2: null },
     { year: 4, sem1: null, sem2: null },
   ]
 
@@ -71,6 +71,7 @@ export default function ModernBWPortfolio() {
     { name: 'Java', category: 'Languages' },
     { name: 'JavaScript', category: 'Languages' },
     { name: 'Go (Golang)', category: 'Languages' },
+    { name: 'CUDA', category: 'Languages' },
     { name: 'HTML', category: 'Frontend' },
     { name: 'CSS', category: 'Frontend' },
     { name: 'React.js', category: 'Frontend' },
@@ -84,11 +85,13 @@ export default function ModernBWPortfolio() {
     { name: 'MongoDB', category: 'Databases' },
     { name: 'AWS', category: 'Cloud' },
     { name: 'Google Colab', category: 'Cloud' },
+    { name: 'Azure DevOps', category: 'DevOps' },
     { name: 'Docker', category: 'DevOps' },
     { name: 'Git', category: 'Version Control' },
     { name: 'GitHub', category: 'Version Control' },
     { name: 'Postman', category: 'Tools' },
     { name: 'Tableau', category: 'Tools' },
+    { name: 'Azure Machine Learning Studio', category: 'Tools' },
     { name: 'Unix/Linux', category: 'Operating Systems' },
     { name: 'Windows NT', category: 'Operating Systems' },
     { name: 'VS Code', category: 'Tools' },
@@ -131,6 +134,22 @@ export default function ModernBWPortfolio() {
 
   const projects = [
     {
+      title: 'Searchly: AI-Powered Product Recommendation System',
+      description: 'Developed Searchly, an AI-driven e-commerce assistant built on a robust microservices architecture with an agentic workflow that orchestrates data scraping, embedding, retrieval, and UI interactions. Features include "Aivy" natural-language chat, personalized recommendations via HuggingFace embeddings and Pinecone vector search, real-time product data scraping, JWT-based authentication, and a responsive React/Tailwind UI.',
+      technologies: [
+        'Flask',
+        'Python',
+        'MongoDB',
+        'Pinecone',
+        'HuggingFace Embeddings',
+        'Groq API',
+        'BeautifulSoup',
+        'React',
+        'Tailwind CSS'
+      ],
+      github: 'https://github.com/SrikarVeluvali/Searchly'
+    },
+    {
       title: 'OCR Entity Extraction with BERT',
       description: 'Developed an Optical Character Recognition (OCR) system using PaddleOCR combined with a fine-tuned BERT model to extract and classify entities from text in images.',
       technologies: ['Optical Character Recognition', 'BERT', 'Python', 'Machine Learning'],
@@ -167,7 +186,7 @@ export default function ModernBWPortfolio() {
       github: 'https://github.com/SrikarVeluvali/lunalevi'
     },
     {
-      title: 'Battle Engine (Release)',
+      title: 'Battle Engine',
       description: 'A text-based command-line game in C, simulating battles between the player and various bots. The game features strategic combat and a secret battle with a special challenge.',
       technologies: ['C', 'Command-line'],
       github: 'https://github.com/SrikarVeluvali/battleengine'
@@ -176,9 +195,20 @@ export default function ModernBWPortfolio() {
 
   const experiences = [
     {
+      title: 'Research Intern',
+      company: 'Microsoft',
+      period: 'Jan 2025 - Present',
+      responsibilities: [
+        'Researched optimization techniques to enhance the efficiency and scalability of kernels for large language models, minimizing latency and maximizing throughput',
+        'Parsed, restructured, and improved the infrastructure of compiler intermediate code using graph transformations to boost performance',
+        'Conducted performance profiling and benchmarking to validate improvements and ensure stability',
+        'Collaborated with research and engineering teams to integrate optimized GPU kernel solutions into production workflows'
+      ]
+    },    
+    {
       title: 'CUDA Programming Intern',
       company: 'Defence Research Development Laboratory (DRDO)',
-      period: 'Jun 2024 - Sep 2024',
+      period: 'Jun 2024 - Dec 2024',
       responsibilities: [
         'Contributed to the development and optimization of CUDA programs for Computational Fluid Dynamics (CFD) simulations',
         'Achieved a 25% reduction in processing time and enhanced computational efficiency on an NVIDIA RTX 4080 GPU',
@@ -383,9 +413,11 @@ export default function ModernBWPortfolio() {
             <Card className="bg-gray-800 border-gray-700">
               <CardContent className="prose prose-invert">
                 <p className="mt-4 text-gray-300">
-                  Hey! I&apos;m Srikar, currently pursuing a Bachelor of Technology in Information Technology at Keshav Memorial Institute of Technology with a CGPA of <b>9.78</b>. <br /><br />
-                  I&apos;ve had the chance to work as a <b>CUDA Programming Intern at DRDL</b>, optimizing computational efficiency for complex simulations. I love diving into tech challenges, and I&apos;ve built some cool projects like a medical chatbot and a heart health prediction app using AI and machine learning. <br /><br />
-                  When I&apos;m not coding or tinkering with tech, I enjoy solving problems on Leetcode or exploring the latest in generative AI.
+                Hey! I&apos;m Srikar Veluvali, currently pursuing a Bachelor of Technology in Information Technology at Keshav Memorial Institute of Technology with a CGPA of <b>9.78</b>.<br /><br />
+      I&apos;m currently a <b>Research Intern at Microsoft</b> in Bengaluru. Previously, I was an <b>HPC Software Engineering Intern at DRDL (DRDO)</b>.<br /><br />
+      I&apos;ve built projects like <b>Astor AI</b>, a medical chatbot fine-tuned on Llama 3 with Retrieval-Augmented Generation achieving <b>400+ downloads</b>, and a <b>Heart Health Web App</b> using the MERN stack and machine learning with Google&apos;s Gemini AI for personalized plans, nominated for the <b>People&apos;s Choice Award in the Google Gemini API Developer Competition.</b><br /><br />
+      When I&apos;m not coding or tinkering with tech, I enjoy solving problems on <b>Leetcode (&gt;800 problems, rating 1713)</b> or exploring the latest in generative AI.
+    
                 </p>
               </CardContent>
             </Card>
