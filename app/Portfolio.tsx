@@ -150,12 +150,6 @@ export default function ModernBWPortfolio() {
       github: 'https://github.com/SrikarVeluvali/Searchly'
     },
     {
-      title: 'OCR Entity Extraction with BERT',
-      description: 'Developed an Optical Character Recognition (OCR) system using PaddleOCR combined with a fine-tuned BERT model to extract and classify entities from text in images.',
-      technologies: ['Optical Character Recognition', 'BERT', 'Python', 'Machine Learning'],
-      github: 'https://github.com/SrikarVeluvali/NER-Using-BERT'
-    },
-    {
       title: 'Astor AI: A Chatbot for Medical Queries',
       description: 'Built a medical chatbot using the Llama 3 model with Retrieval Augmented Generation (RAG) for more accurate responses and faster query handling, optimized for local system use.',
       technologies: ['React.js', 'Flask', 'LLMs', 'Generative AI'],
@@ -166,6 +160,12 @@ export default function ModernBWPortfolio() {
       description: 'Developed a MERN stack web app with Machine Learning for heart disease prediction, offering personalized diet and exercise plans and integrating Google&apos;s Gemini AI for diet suggestions.',
       technologies: ['MERN', 'Machine Learning', 'Google Gemini AI', 'Flask'],
       github: 'https://github.com/SrikarVeluvali/HeartHealth'
+    },
+    {
+      title: 'OCR Entity Extraction with BERT',
+      description: 'Developed an Optical Character Recognition (OCR) system using PaddleOCR combined with a fine-tuned BERT model to extract and classify entities from text in images.',
+      technologies: ['Optical Character Recognition', 'BERT', 'Python', 'Machine Learning'],
+      github: 'https://github.com/SrikarVeluvali/NER-Using-BERT'
     },
     {
       title: 'Battle Engine (Remaster)',
