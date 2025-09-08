@@ -56,7 +56,7 @@ export default function ModernBWPortfolio() {
   const cgpaData: CGPAData[] = [
     { year: 1, sem1: 9.84, sem2: 9.79 },
     { year: 2, sem1: 9.62, sem2: 9.86 },
-    { year: 3, sem1: 9.26, sem2: null },
+    { year: 3, sem1: 9.26, sem2: 9.37 },
     { year: 4, sem1: null, sem2: null },
   ]
 
