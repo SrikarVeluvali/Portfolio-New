@@ -321,7 +321,7 @@ export default function ModernBWPortfolio() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              IIIrd Year Student At Keshav Memorial Institute of Technology
+              IVth Year Student At Keshav Memorial Institute of Technology
             </motion.p>
             <motion.div
               className="flex flex-wrap justify-center gap-4"
