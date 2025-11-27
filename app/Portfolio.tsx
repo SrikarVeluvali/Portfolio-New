@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList } from "@/components/ui/tabs"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Github, Linkedin, Mail, FileText, Code, Youtube, Zap, Star, Rocket, Award } from 'lucide-react'
+import { Github, Linkedin, Code, Youtube, Star, Rocket, Award } from 'lucide-react'
 import dynamic from 'next/dynamic'
 
 const Typewriter = dynamic(() => import('typewriter-effect'), { ssr: false })
@@ -89,7 +89,7 @@ export default function ComicBookPortfolio() {
     }, 5000) // Change certificate every 5 seconds
 
     return () => clearInterval(interval)
-  }, [])
+  }, [achievements.length])
 
   const cgpaData: CGPAData[] = [
     { year: 1, sem1: 9.84, sem2: 9.79 },
@@ -312,7 +312,7 @@ export default function ComicBookPortfolio() {
       } else {
         setSubmitStatus('error')
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -326,23 +326,7 @@ export default function ComicBookPortfolio() {
     })
   }
 
-  const education = [
-    {
-      degree: 'Bachelor of Technology in Information Technology',
-      institution: 'Keshav Memorial Institute of Technology',
-      year: 'Expected 2026'
-    },
-    {
-      degree: 'Class 12',
-      institution: 'Sri Chaitanya Junior College',
-      year: '2022'
-    },
-    {
-      degree: 'Class 10',
-      institution: 'Dilsukhnagar Public School',
-      year: '2020'
-    }
-  ];
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-x-hidden">
@@ -611,19 +595,19 @@ export default function ComicBookPortfolio() {
                 <div className="browser-content">
                   <h1>👋 Hello, World!</h1>
                   <p>
-                    I'm <span className="browser-highlight">Srikar Veluvali</span>, currently pursuing a Bachelor of Technology in Information Technology at Keshav Memorial Institute of Technology with a CGPA of <span className="browser-number">{calculateOverallCGPA()}</span>.
+                    I&apos;m <span className="browser-highlight">Srikar Veluvali</span>, currently pursuing a Bachelor of Technology in Information Technology at Keshav Memorial Institute of Technology with a CGPA of <span className="browser-number">{calculateOverallCGPA()}</span>.
                   </p>
 
                   <p>
-                    I've worked as a <span className="browser-highlight-alt">Research Intern at Microsoft</span> in Bengaluru. Previously, I was an <span className="browser-highlight-orange">HPC Software Engineering Intern at DRDL (DRDO)</span>.
+                    I&apos;ve worked as a <span className="browser-highlight-alt">Research Intern at Microsoft</span> in Bengaluru. Previously, I was an <span className="browser-highlight-orange">HPC Software Engineering Intern at DRDL (DRDO)</span>.
                   </p>
 
                   <p>
-                    I've built projects like <span className="browser-highlight-green">Astor AI</span>, a medical chatbot fine-tuned on Llama 3 with Retrieval-Augmented Generation achieving <span className="browser-number">400+</span> downloads, and a <span className="browser-highlight-pink">Heart Health Web App</span> using the MERN stack and machine learning with Google's Gemini AI for personalized plans, nominated for the <span className="browser-highlight-yellow">People's Choice Award in the Google Gemini API Developer Competition</span>.
+                    I&apos;ve built projects like <span className="browser-highlight-green">Astor AI</span>, a medical chatbot fine-tuned on Llama 3 with Retrieval-Augmented Generation achieving <span className="browser-number">400+</span> downloads, and a <span className="browser-highlight-pink">Heart Health Web App</span> using the MERN stack and machine learning with Google's Gemini AI for personalized plans, nominated for the <span className="browser-highlight-yellow">People&apos;s Choice Award in the Google Gemini API Developer Competition</span>.
                   </p>
 
                   <p>
-                    When I'm not coding or tinkering with tech, I enjoy solving problems on <span className="browser-highlight-orange">LeetCode <span className="browser-number">(1122+ problems, rating 1713)</span></span> or exploring the latest in generative AI.
+                    When I&apos;m not coding or tinkering with tech, I enjoy solving problems on <span className="browser-highlight-orange">LeetCode <span className="browser-number">(1122+ problems, rating 1713)</span></span> or exploring the latest in generative AI.
                   </p>
                 </div>
               </div>
@@ -1263,7 +1247,7 @@ export default function ComicBookPortfolio() {
                     {/* Status Messages */}
                     {submitStatus === 'success' && (
                       <div className="terminal-line mt-4">
-                        <span className="terminal-output text-green-400">✓ Message sent successfully! I'll get back to you soon.</span>
+                        <span className="terminal-output text-green-400">✓ Message sent successfully! I&apos;ll get back to you soon.</span>
                       </div>
                     )}
                     {submitStatus === 'error' && (
