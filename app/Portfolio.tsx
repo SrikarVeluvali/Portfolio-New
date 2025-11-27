@@ -1,12 +1,12 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import { motion, useScroll, useSpring } from 'framer-motion'
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Tabs, TabsContent, TabsList } from "@/components/ui/tabs"
+
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Github, Linkedin, Code, Youtube, Star, Rocket, Award } from 'lucide-react'
 import dynamic from 'next/dynamic'
@@ -603,7 +603,7 @@ export default function ComicBookPortfolio() {
                   </p>
 
                   <p>
-                    I&apos;ve built projects like <span className="browser-highlight-green">Astor AI</span>, a medical chatbot fine-tuned on Llama 3 with Retrieval-Augmented Generation achieving <span className="browser-number">400+</span> downloads, and a <span className="browser-highlight-pink">Heart Health Web App</span> using the MERN stack and machine learning with Google's Gemini AI for personalized plans, nominated for the <span className="browser-highlight-yellow">People&apos;s Choice Award in the Google Gemini API Developer Competition</span>.
+                    I&apos;ve built projects like <span className="browser-highlight-green">Astor AI</span>, a medical chatbot fine-tuned on Llama 3 with Retrieval-Augmented Generation achieving <span className="browser-number">400+</span> downloads, and a <span className="browser-highlight-pink">Heart Health Web App</span> using the MERN stack and machine learning with Google&apos;s Gemini AI for personalized plans, nominated for the <span className="browser-highlight-yellow">People&apos;s Choice Award in the Google Gemini API Developer Competition</span>.
                   </p>
 
                   <p>
