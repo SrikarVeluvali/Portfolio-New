@@ -57,9 +57,10 @@ export default function ComicBookPortfolio() {
     'Silver Medal in Programming in Java - IIT Kharagpur (Top 5% - Scored 78%)',
     'Deep Learning using Python - IIT Hyderabad (Completed February 2023)',
     'Prompt Design and Developing Generative AI Apps - Google (Awarded May 2024)',
-    'Top Performer in Coding Challenges - LeetCode (Solved 1122+ problems)',
-    '2-Star Rating on Codechef for Competitive Programming',
-    'Nominee for People\'s Choice Award - Google Gemini API Developer Competition (2024)'
+    'Solved 1,172+ problems on LeetCode with a competitive programming rating of 1713.',
+    'Codeforces Specialist with a rating of 1450+.',
+    'Nominee for People\'s Choice Award - Google Gemini API Developer Competition (2024)',
+    'Organized the "Diss that DSA" bootcamp, instructing 1,500+ students across India in Backend Web Development and Machine Learning.'
   ];
 
   useEffect(() => {
@@ -95,7 +96,7 @@ export default function ComicBookPortfolio() {
     { year: 1, sem1: 9.84, sem2: 9.79 },
     { year: 2, sem1: 9.62, sem2: 9.86 },
     { year: 3, sem1: 9.26, sem2: 9.37 },
-    { year: 4, sem1: null, sem2: null },
+    { year: 4, sem1: 9.05, sem2: 9.47 },
   ]
 
   const calculateYearCGPA = (sem1: number | null, sem2: number | null): string | null => {
@@ -111,6 +112,7 @@ export default function ComicBookPortfolio() {
     { name: 'JavaScript', category: 'Languages' },
     { name: 'Go (Golang)', category: 'Languages' },
     { name: 'CUDA', category: 'Languages' },
+    { name: 'Scala', category: 'Languages' },
     { name: 'HTML', category: 'Frontend' },
     { name: 'CSS', category: 'Frontend' },
     { name: 'React.js', category: 'Frontend' },
@@ -122,6 +124,8 @@ export default function ComicBookPortfolio() {
     { name: 'Flask', category: 'Backend' },
     { name: 'MySQL', category: 'Databases' },
     { name: 'MongoDB', category: 'Databases' },
+    { name: 'Chroma', category: 'Databases' },
+    { name: 'Pinecone', category: 'Databases' },
     { name: 'AWS', category: 'Cloud' },
     { name: 'Google Colab', category: 'Cloud' },
     { name: 'Azure DevOps', category: 'DevOps' },
@@ -171,6 +175,40 @@ export default function ComicBookPortfolio() {
 
   const projects = [
     {
+      title: 'GRPO-CoT RL for Efficient Reasoning on Qwen 2.5',
+      description: 'Built a GRPO reinforcement-learning pipeline on Qwen2.5-3B (GSM8K) with multi-objective rewards—XML schema, integer check, and exact-match—to enforce structured chain-of-thought reasoning. Fine-tuned with 4-bit QLoRA/LoRA (Unsloth/PEFT), vLLM on-policy sampling, and TRL\'s GRPOTrainer on a single GPU, strengthening a 3B model\'s math reasoning by 4x using a DeepSeek-inspired, schema-aligned methodology.',
+      technologies: [
+        'Python',
+        'PyTorch',
+        'Qwen2.5',
+        'Reinforcement Learning',
+        'GRPO',
+        'QLoRA / LoRA',
+        'Unsloth',
+        'PEFT',
+        'vLLM',
+        'TRL'
+      ],
+      github: 'https://github.com/SrikarVeluvali/Qwen-2.5-GRPO-RL'
+    },
+    {
+      title: 'AgentBlocks: Self-Healing AI Workflow Engine',
+      description: 'Built a YAML-driven async graph workflow engine using Kahn\'s topological sort and asyncio.gather to auto-parallelize DAG stages—supporting conditional branching, foreach/range/while loops, retries, and timeouts across 22 node types (HTTP, LLM, file I/O, data transforms). Engineered a multi-agent self-healing subsystem (ReAct pattern) with a Monitor → Diagnostician → Repair pipeline that parses failures across 7 languages, generates LLM-guided patches with rollback safety, and re-verifies fixes autonomously. Ships with a unified LLM provider abstraction across 5 backends, git-backed versioning, cron scheduling, and 199+ pytest tests.',
+      technologies: [
+        'Python',
+        'FastAPI',
+        'asyncio',
+        'LLM Orchestration',
+        'ReAct',
+        'OpenAI',
+        'Anthropic',
+        'Groq',
+        'Ollama',
+        'AWS Bedrock'
+      ],
+      github: 'https://github.com/SrikarVeluvali/AgentBlocks'
+    },
+    {
       title: 'PRISM: AI-Powered Learning Platform',
       description: 'Built PRISM, a comprehensive learning platform that leverages AI to transform how students study and prepare. Features include RAG-based document Q&A, AI-powered quiz generation, virtual interview practice, interactive flashcards, PDF annotation, mind maps, and progress analytics. Supports multiple formats including PDFs, Word documents, text files, and YouTube videos.',
       technologies: [
@@ -206,7 +244,7 @@ export default function ComicBookPortfolio() {
     },
     {
       title: 'Astor AI: A Chatbot for Medical Queries',
-      description: 'Built a medical chatbot using the Llama 3 model with Retrieval Augmented Generation (RAG) for more accurate responses and faster query handling, optimized for local system use.',
+      description: 'Built a medical chatbot powered by the Llama 3 architecture with Retrieval-Augmented Generation (RAG) for accurate, evidence-backed clinical Q&A. Fine-tuned on curated medical datasets and published on Hugging Face, reaching 800+ downloads.',
       technologies: ['React.js', 'Flask', 'LLMs', 'Generative AI'],
       github: 'https://github.com/SrikarVeluvali/Astor-AI',
       demoVideo: 'https://youtu.be/k34QwkP7tRo?si=VtL6dCdv5l4p8wZ0'
@@ -252,26 +290,37 @@ export default function ComicBookPortfolio() {
 
   const experiences = [
     {
+      title: 'SDE Intern',
+      company: 'Amazon',
+      period: 'Jan 2026 - Jun 2026',
+      responsibilities: [
+        'Engineered auditing dispute & claims management software serving 3.7M+ auditors across Amazon, streamlining resolution workflows and reducing auditing time by 78% through automated processing pipelines',
+        'Owned the end-to-end client onboarding lifecycle from intake to activation, collaborating cross-functionally with engineering and operations teams to standardize workflows and accelerate time-to-productivity for new accounts',
+        'Migrated user access management from individual Login IDs to LDAP and POSIX group-based authorization, enabling centralized permission control and improving scalability, consistency, and governance across Controllership teams',
+        'Eliminated the 7-day onboarding SLA entirely by designing and implementing group-based access provisioning, empowering teams to self-manage memberships and significantly reducing IT dependency for access changes'
+      ]
+    },
+    {
       title: 'Research Intern',
       company: 'Microsoft',
       period: 'Jan 2025 - Jul 2025',
       responsibilities: [
-        'Researched optimization techniques to enhance the efficiency and scalability of kernels for large language models, minimizing latency and maximizing throughput',
-        'Parsed, restructured, and improved the infrastructure of compiler intermediate code using graph transformations to boost performance',
-        'Conducted performance profiling and benchmarking to validate improvements and ensure stability',
-        'Collaborated with research and engineering teams to integrate optimized GPU kernel solutions into production workflows'
+        'Designed a graph-based code optimizer that auto-transforms NVIDIA\'s PTX assembly for faster execution',
+        'Built a modular pipeline featuring parsing, SSA conversion, control-flow graph generation, and symbolic analysis',
+        'Developed advanced pattern-detection algorithms via symbolic execution to spot non-coalesced memory accesses, then automated kernel rewrites to enforce optimal memory-access patterns and boost throughput',
+        'Worked with engineers and researchers to handle PTX syntax variations across multiple architectures',
+        'Achieved a 74.12% performance improvement in matrix multiplication kernels through these transforms'
       ]
     },
     {
-      title: 'CUDA Programming Intern',
+      title: 'HPC Software Engineering Intern',
       company: 'Defence Research Development Laboratory (DRDO)',
       period: 'Jun 2024 - Dec 2024',
       responsibilities: [
-        'Contributed to the development and optimization of CUDA programs for Computational Fluid Dynamics (CFD) simulations',
-        'Achieved a 25% reduction in processing time and enhanced computational efficiency on an NVIDIA RTX 4080 GPU',
-        'Collaborated with a multidisciplinary team of engineers to implement high-performance computing solutions',
-        'Improved overall simulation speed and accuracy through optimization of CUDA code',
-        'Worked on high-performance computing and parallel processing techniques to improve simulation efficiency'
+        'Cut GPU runtime for missile-flow CFD simulations by 25.93%—from 30 days down to 22',
+        'Crafted and tuned parallel algorithms to drive higher GPU-core utilization',
+        'Partnered closely with engineers to align compute kernels with fluid-dynamics requirements',
+        'Accelerated overall project timelines through leaner, more efficient simulation workflows'
       ]
     }
   ];
@@ -482,6 +531,7 @@ export default function ComicBookPortfolio() {
                 <Typewriter
                   options={{
                     strings: [
+                      'Amazon SDE Intern',
                       'Microsoft Research Intern',
                       'DRDL HPC Intern',
                       'AI/ML Enthusiast',
@@ -599,15 +649,15 @@ export default function ComicBookPortfolio() {
                   </p>
 
                   <p>
-                    I&apos;ve worked as a <span className="browser-highlight-alt">Research Intern at Microsoft</span> in Bengaluru. Previously, I was an <span className="browser-highlight-orange">HPC Software Engineering Intern at DRDL (DRDO)</span>.
+                    I&apos;m currently an <span className="browser-highlight-alt">SDE Intern at Amazon</span>, where I built dispute &amp; claims management software serving <span className="browser-number">3.7M+</span> auditors. Before that, I was a <span className="browser-highlight-alt">Research Intern at Microsoft</span> in Bengaluru, and earlier an <span className="browser-highlight-orange">HPC Software Engineering Intern at DRDL (DRDO)</span>.
                   </p>
 
                   <p>
-                    I&apos;ve built projects like <span className="browser-highlight-green">Astor AI</span>, a medical chatbot fine-tuned on Llama 3 with Retrieval-Augmented Generation achieving <span className="browser-number">400+</span> downloads, and a <span className="browser-highlight-pink">Heart Health Web App</span> using the MERN stack and machine learning with Google&apos;s Gemini AI for personalized plans, nominated for the <span className="browser-highlight-yellow">People&apos;s Choice Award in the Google Gemini API Developer Competition</span>.
+                    I&apos;ve built projects like <span className="browser-highlight-green">Astor AI</span>, a medical chatbot fine-tuned on Llama 3 with Retrieval-Augmented Generation achieving <span className="browser-number">800+</span> downloads, and a <span className="browser-highlight-pink">Heart Health Web App</span> using the MERN stack and machine learning with Google&apos;s Gemini AI for personalized plans, nominated for the <span className="browser-highlight-yellow">People&apos;s Choice Award in the Google Gemini API Developer Competition</span>.
                   </p>
 
                   <p>
-                    When I&apos;m not coding or tinkering with tech, I enjoy solving problems on <span className="browser-highlight-orange">LeetCode <span className="browser-number">(1122+ problems, rating 1713)</span></span> or exploring the latest in generative AI.
+                    When I&apos;m not coding or tinkering with tech, I enjoy solving problems on <span className="browser-highlight-orange">LeetCode <span className="browser-number">(1,172+ problems, rating 1713)</span></span> or exploring the latest in generative AI.
                   </p>
                 </div>
               </div>
