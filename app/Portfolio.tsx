@@ -294,7 +294,7 @@ export default function ComicBookPortfolio() {
       company: 'Amazon',
       period: 'Jan 2026 - Jun 2026',
       responsibilities: [
-        'Engineered auditing dispute & claims management software serving 3.7M+ auditors across Amazon, streamlining resolution workflows and reducing auditing time by 78% through automated processing pipelines',
+        'Engineered auditing dispute & claims management software serving 1200+ auditors across Amazon, streamlining resolution workflows and reducing auditing time through automated processing pipelines',
         'Owned the end-to-end client onboarding lifecycle from intake to activation, collaborating cross-functionally with engineering and operations teams to standardize workflows and accelerate time-to-productivity for new accounts',
         'Migrated user access management from individual Login IDs to LDAP and POSIX group-based authorization, enabling centralized permission control and improving scalability, consistency, and governance across Controllership teams',
         'Eliminated the 7-day onboarding SLA entirely by designing and implementing group-based access provisioning, empowering teams to self-manage memberships and significantly reducing IT dependency for access changes'
